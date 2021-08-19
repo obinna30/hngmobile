@@ -14,6 +14,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        getIntent().getBooleanExtra("isAppetize", false)
+        getApplicationContext().getSharedPreferences("prefs.db", 0).getBoolean("isAppetize", false)
         val actionBar = supportActionBar
         actionBar!!.title = "User Input Form"
         var first_name = findViewById(R.id.first_name) as EditText
